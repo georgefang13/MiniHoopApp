@@ -1,5 +1,6 @@
 # mini_hoop_app
 open ios/Runner.xcworkspace
+adding change for main.dart push
 
 A new Flutter project.
 
