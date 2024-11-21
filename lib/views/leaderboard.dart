@@ -44,7 +44,7 @@ class LeaderboardState extends State<Leaderboard> {
                 return PlayerCard(
                   name: user.name,
                   // color: Colors.blue,
-                  shotsTaken: user.shotsMade,
+                  shotsTaken: user.shotsTaken,
                   shotsMade: user.shotsMade,
                 );
               },
