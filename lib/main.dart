@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_hoop_app/pages/leaderboard.dart';
+import 'package:mini_hoop_app/views/leaderboard.dart';
 
 void main() {
   runApp(SwishApp());
