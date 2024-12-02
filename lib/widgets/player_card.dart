@@ -1,46 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:mini_hoop_app/models/user.dart';
+import 'package:mini_hoop_app/views/profile.dart';
 
 class PlayerCard extends StatelessWidget {
-  final String name;
-  // final Color color;
-  final int shotsTaken;
-  final int shotsMade;
-  final double? shootingPercentage;
-  // final Map<int, double>? heatMap;
+  final User user;
+  final Color color;
+  final double shootingPercentage;
 
   PlayerCard({
-    required this.name,
-    // required this.color,
-    required this.shotsTaken,
-    required this.shotsMade,
-    this.shootingPercentage,
-    // this.heatMap
-  });
+    required this.user,
+    Color? color,
+    required this.shootingPercentage,
+  }) : color = color ?? Colors.blue;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      // color: color.withOpacity(0.1),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Text(
-              name,
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-            SizedBox(height: 10),
-            Text('Total Shots: $shotsTaken'),
-            Text('Total Makes: $shotsMade'),
-            Text('Shooting Percentage: ${shootingPercentage ?? 0.0}'),
-            SizedBox(height: 20),
-            Placeholder(
-                fallbackHeight: 100,
-                fallbackWidth: 100), // This will be your heat map image
-          ],
+        padding: EdgeInsets.all(16.0),
+        child: InkWell(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ProfileView(
+                      user: user,
+                      shootingPercentage: shootingPercentage,
+                    )),
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Icon(
+                  Icons.person,
+                  color: color,
+                ),
+              ),
+              SizedBox(width: 5.0),
+              Text(
+                user.name,
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+              SizedBox(width: 10.0),
+              Text(
+                'Shooting Percentage: $shootingPercentage% (${user.shotsMade} / ${user.shotsTaken})',
+                style: TextStyle(color: Colors.grey.shade900, fontSize: 14.0),
+              ),
+            ],
+          ),
         ),
       ),
     );
