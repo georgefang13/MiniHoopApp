@@ -95,6 +95,7 @@ class _HeatMapPainter extends CustomPainter {
     double radius = size.width / 2;
     double segmentAngle = pi / 5;
 
+    // we have 5 zones on the court
     for (int i = 0; i < 5; i++) {
       // set color for segment based on percentage
       double zonePct = min(heatMap[i + 1] ?? 0.0, 99.9);
@@ -102,7 +103,7 @@ class _HeatMapPainter extends CustomPainter {
       Color zoneColor = colorList[zonePctIndex];
       overlayPaint.color = zoneColor.withOpacity(0.75);
 
-      // Draw a pie-shaped segment
+      // draw angular segment
       canvas.drawPath(
         Path()
           ..moveTo(centerX, centerY)
