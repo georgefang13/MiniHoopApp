@@ -138,9 +138,10 @@ class ProfileView extends StatelessWidget {
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold))),
                             DataColumn(
-                                label: Text('Shooting %',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold))),
+                                label: Text(
+                              'Shooting %',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )),
                           ],
                           rows: user.heatMap.entries
                               .map(

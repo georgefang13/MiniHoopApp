@@ -100,10 +100,7 @@ class LeaderboardState extends State<Leaderboard> {
                 : (sortType == FilterType.totalShots)
                     ? snapshot.data!
                         .sort((a, b) => b.shotsTaken.compareTo(a.shotsTaken))
-                    : (sortType == FilterType.alphabetical)
-                        ? snapshot.data!
-                            .sort((a, b) => (a.name.compareTo(b.name)))
-                        : snapshot.data!;
+                    : snapshot.data!.sort((a, b) => (a.name.compareTo(b.name)));
             return ListView.builder(
               itemCount: userStats.length,
               itemBuilder: (context, index) {
