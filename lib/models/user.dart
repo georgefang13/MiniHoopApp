@@ -1,6 +1,5 @@
 class User {
   final String name;
-  // final Color color;
   final int shotsMade;
   final int shotsTaken;
   final double shootingPercentage;
@@ -8,7 +7,6 @@ class User {
 
   User({
     required String name,
-    // required this.color,
     required this.shotsMade,
     required this.shotsTaken,
     required this.shootingPercentage,
@@ -23,7 +21,6 @@ class User {
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       name: json['name'],
-      // color: json['color'],
       shotsMade: json['shotsMade'],
       shotsTaken: json['shotsTaken'],
       shootingPercentage: double.tryParse(json['shootingPercentage']) ?? 0.0,
