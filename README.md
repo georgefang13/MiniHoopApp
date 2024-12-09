@@ -4,6 +4,9 @@ Authors: George Fang, Luke Andresen, Gavin Kitch
 
 Welcome to the MiniHoopApp repository! This project is part of the S.W.I.S.H. Basketball system, designed to enhance the experience of playing mini basketball. The app serves as the user interface for tracking and visualizing player performance, including shot data and heatmaps.
 
+Demo Video: https://drive.google.com/file/d/1a6Q0MUXWQToOVb3P7CM_IPTUr2tZCw66/view?usp=drive_link
+Final Report: https://docs.google.com/document/d/1CfQ8T8VmaOaJPBIKa4VgHvHj74h6YulsXECprUpLiQ8/edit?usp=sharing
+
 ## Features
 * Player Profiles: View performance statistics for each player.
 * Shot Performance Tracking: Displays total shots, successful makes, and shooting percentages.
